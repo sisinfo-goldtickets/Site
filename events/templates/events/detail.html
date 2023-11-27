@@ -1,0 +1,16 @@
+{% extends 'base.html' %} 
+{% block title %}
+  {{ event.name }} ({{event.event_date }})
+{% endblock title %}
+{% block content %}
+<h2>Detalhes do Evento {{ event.name }} ({{ event.event_date }})</h2>
+<section class="dados-de-evento">
+  <img src="{{ event.photo_url }}" alt="Foto do evento {{ event.name}}" />
+  <ul>
+    <li>Nome: {{ event.name }}</li>
+    <li>Ano de Lançamento: {{ event.event_date }}</li>
+    <li><a href="{% url 'events:update' event.id %}">Editar</a></li>
+    <li><a href="{% url 'events:delete' event.id %}">Apagar</a></li>
+  </ul>
+</section>
+{% endblock content %}
