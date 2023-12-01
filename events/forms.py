@@ -1,5 +1,5 @@
 from django import forms
-from .models import Event
+from .models import Event, Comment
 
 class EventForm(forms.ModelForm):
     class Meta:
@@ -19,4 +19,14 @@ class EventForm(forms.ModelForm):
             'event_date': 'Data do Evento',
             'price': 'Valor do Ingresso',
             'photo_url': 'URL da foto'
+        }
+
+class CommentForm(forms.ModelForm):
+    class Meta:
+        model = Comment
+        fields = [
+            'text',
+        ]
+        labels = {
+            'text': 'Comentário',
         }

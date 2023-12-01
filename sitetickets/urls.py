@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import include, path # modificar esta linha
 
 urlpatterns = [
-    path('', include('staticpages.urls')), # adicionar esta linha
+    path('', include('events.urls')), # adicionar esta linha
     path('admin/', admin.site.urls),
-    path('events/', include('events.urls')), # adicionar esta linha
+    path('usuarios/', include('usuarios.urls')),
+    path('usuarios/', include('django.contrib.auth.urls')),
 ]
